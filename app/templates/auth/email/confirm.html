@@ -1,0 +1,8 @@
+<p>Hola {{ user.username }},</p>
+<p>Bienvenido a <b>VaVerde</b>!</p>
+<p>Para confirmar tu cuenta favor de <a href="{{ url_for('auth.confirm', token=token, _external=True) }}">hacer click aqui</a>.</p>
+<p>Alternativamente puedes copiar el siguiente enlace en tu barra de busqueda del navegador:</p>
+<p>{{ url_for('auth.confirm', token=token, _external=True) }}</p>
+<p>Gracias,</p>
+<p>El equipo de VaVerde</p>
+<p><small>Nota: respuestas a este correo no son monitoreadas.</small></p>

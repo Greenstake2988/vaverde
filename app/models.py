@@ -56,10 +56,10 @@ class User(UserMixin, db.Model):
         s = Serializer(current_app.config['SECRET_KEY'], expiration)
         return s.dumps({'confirm': self.id}).decode('utf-8')
     
-    def confirm(self, token, expiration=3600):
+    def confirm(self, token):
         s = Serializer(current_app.config['SECRET_KEY'])
         try:
-            data = s.loads(token.encode('utf-8'), expiration=expiration)
+            data = s.loads(token.encode('utf-8'))
         except:
             return False
         if data.get('confirm') != self.id:

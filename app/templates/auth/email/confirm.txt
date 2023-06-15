@@ -1,0 +1,13 @@
+Hola {{ user.username }}
+
+Bienvenido a VaVerde!
+
+Para confirmar tu cuenta por favor haz click en el siguiente enlace:
+
+{{ url_for('auth.confirm', token=token, _external=True) }}
+
+Gracias,
+
+El equipo de Volver a VaVerde
+
+Nota: respuestas a este correo no son monitoreadas.

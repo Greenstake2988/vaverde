@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Flasky - Confirma tu Cuenta{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>
+        Hola, {{ current_user.username }}!
+    </h1>
+    <h3>Aun no has confirmado tu cuenta.</h3>
+    <p>
+        Antes de acceder al sitio necesitas confirmar tu email.
+        Revisa tu inbox, debes haber recibido un correo de confirmacion.
+    </p>
+    <p>
+        Necesitas otro correo de confirmacion?
+        <a href="{{ url_for('auth.resend_confirmation') }}">Haz Click Aqui</a>
+    </p>
+</div>
+{% endblock %}
