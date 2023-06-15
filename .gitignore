@@ -1,0 +1,7 @@
+#Carpeta Virtual ENV
+venv
+
+#CACHE
+__pycache__
+
+
