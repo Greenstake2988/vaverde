@@ -7,3 +7,11 @@ __pycache__
 #Variables de entorno
 .env
 
+#NGROK
+ngrok
+
+#VSCODE
+.vscode
+
+#DATABase
+data-dev.sqlite

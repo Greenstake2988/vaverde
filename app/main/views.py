@@ -1,6 +1,6 @@
 from flask import render_template, flash
 from .. import db
-from ..models import Gasto
+from ..models import Gasto, User
 from . import main
 from .forms import GastoForm
 from flask_login import login_required
@@ -9,9 +9,10 @@ from flask_login import login_required
 def index():
     return render_template('index.html')
 
-@main.route('/usuario/<string:name>')
-def usuario(name):
-    return render_template('usuario.html', name=name)
+@main.route('/user/<string:username>')
+def user(username):
+    user = User.query.filter_by(username=username).first_or_404()
+    return render_template('user.html', user=user)
 
 @main.route('/gastos', methods=['GET','POST'])
 @login_required
